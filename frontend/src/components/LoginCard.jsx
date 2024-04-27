@@ -28,8 +28,8 @@ export default function LoginCard() {
 	
 
 	const[inputs, setInputs] = useState({
-		username: "",
-		password: "",
+		username: "testuser",
+		password: "123456",
 	});
 
 	const showToast = useShowToast();
@@ -118,13 +118,15 @@ export default function LoginCard() {
 						</Stack>
 						<Stack pt={6}>
 							<Text align={"center"}>
-								Don't have an account?
+								Don't have an account? 
 								<Link color={"blue.400"} 
 								  onClick={() => setAuthScreen("signup")}
 								>
 									Sign up
 								</Link>
+								
 							</Text>
+							
 						</Stack>
 					</Stack>
 				</Box>
