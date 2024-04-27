@@ -8,7 +8,7 @@ import useShowToast from '../hooks/useShowToast';
 import { conversationAtom, selectedConversationAtom } from '../atoms/messagesAtom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import userAtom from '../atoms/userAtom';
-import { useSocket } from './context/SocketContext';
+import { useSocket } from '../context/SocketContext';
 
 const ChatPage = () => {
   const [loadingConversations, setLoadingConversations] = useState(true);
@@ -18,7 +18,8 @@ const ChatPage = () => {
   const [selectedConversation, setSelectedConversation] = useRecoilState(selectedConversationAtom);
   const currentUser = useRecoilValue(userAtom);
   const showToast = useShowToast();
-  const {socket, onlineUsers} = useSocket
+  const {socket, onlineUsers} = useSocket();
+
   useEffect(() => {
     const getConversation = async () => {
       try {
